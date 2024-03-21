@@ -1,19 +1,16 @@
-var express=require('express')
-var router=express.Router();
+var express = require('express');
+var router = express.Router();
 
-router.get('/',function(req,res,next){
-    var a=Math.atan()*150;
-    var b=Math.atan()*250;
-    var c=Math.atan()*300;
+/* GET home page. */
+router.get('/', function(req, res, next) {
+    var x = Math.random()*10;
+    var y = Math.random()*20;
 
-    var funcOne=Math.atan(a);
-    var funcTwo=Math.exp(b);
-    var funcThree=Math.expm1(c);
+    var ValueOne = Math.atan(y);
+    var ValueTwo = Math.exp(x);
+    var ValueThree = Math.expm1(y);
 
-    res.send(`Random no's are ${a}, ${b} and ${c} <br>
-    Math.atan applied to ${a} is ${funcOne} <br>
-    Math.exp applied to ${b} is ${funcTwo} <br>
-    Math.expm1 applied to ${c} is ${funcThree}`);
+  res.send(`The random numbers are ${x} and ${y} <br> Math.atan applied to ${x} is ${ValueOne} <br>Math.exp applied to ${y} is ${ValueTwo} <br>Math.exmp1 applied to ${x} is ${ValueThree}`);
 });
 
-module.exports=router;
+module.exports = router;
